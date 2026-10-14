@@ -38,7 +38,13 @@ def get_model_pipeline():
                 "Please run `python -m backend.ml.train_model` before generating predictions."
             )
         logger.info(f"Loading ReCare readmission model from {MODEL_PATH}...")
-        _CACHED_PIPELINE = joblib.load(MODEL_PATH)
+        try:
+            _CACHED_PIPELINE = joblib.load(MODEL_PATH)
+        except Exception as e:
+            logger.warning(f"Model load encountered error ({e}). Retraining calibrated model...")
+            from backend.ml.train_model import train_readmission_models
+            train_readmission_models()
+            _CACHED_PIPELINE = joblib.load(MODEL_PATH)
     return _CACHED_PIPELINE
 
 
