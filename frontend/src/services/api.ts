@@ -3,7 +3,7 @@ import axios from 'axios';
 export const API_BASE_URL = (
   import.meta.env.VITE_API_BASE_URL ||
   import.meta.env.VITE_API_URL ||
-  ''
+  'https://lawn-published-lawrence-applicable.trycloudflare.com'
 ).replace(/\/+$/, '');
 
 export const api = axios.create({
