@@ -1,0 +1,31 @@
+services:
+  # FastAPI ML Backend Web Service
+  - type: web
+    name: recare-ai-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python -c "import backend.db.init_db; backend.db.init_db.initialize_and_seed_database()" && uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ENVIRONMENT
+        value: production
+
+  # React 19 / Vite Clinical Dashboard Static Site
+  - type: static-site
+    name: recare-ai
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: recare-ai-backend
+          property: host
