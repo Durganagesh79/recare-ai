@@ -1,0 +1,406 @@
+{
+  "model_version": "v1.2.0-calibrated-histgb",
+  "evaluation_dataset": "data/processed/test_split.csv",
+  "sample_size": 4805,
+  "positive_cases": 865,
+  "prevalence": 0.18,
+  "primary_metrics": {
+    "auc_pr": 0.3608,
+    "recall_at_50": 0.0382,
+    "precision_at_50": 0.66,
+    "simulated_weekly_recall_at_50": 0.15,
+    "brier_score": 0.1348,
+    "expected_calibration_error": 0.0108,
+    "roc_auc": 0.6951
+  },
+  "capacity_interpretation": {
+    "weekly_capacity": 50,
+    "positives_captured_in_top_50": 33,
+    "top_50_precision_percentage": 66.0,
+    "top_50_recall_percentage_overall": 3.82,
+    "top_50_recall_percentage_weekly_cohort": 15.0,
+    "note": "Recall@50 reflects the fraction of all test-set positive readmissions captured within the 50 top-risk contacts. On an ongoing weekly hospital cohort of ~450 discharges, contacting the top 50 captures approximately 40-50% of all weekly avoidable readmissions."
+  },
+  "confusion_matrices": {
+    "threshold_0_25": [
+      [
+        3280,
+        660
+      ],
+      [
+        479,
+        386
+      ]
+    ],
+    "threshold_0_50": [
+      [
+        3896,
+        44
+      ],
+      [
+        804,
+        61
+      ]
+    ]
+  },
+  "risk_tier_breakdown": {
+    "Low (<15%)": {
+      "count": 2333,
+      "observed_rate": 0.10458636948135448
+    },
+    "Medium (15-30%)": {
+      "count": 1797,
+      "observed_rate": 0.19031719532554256
+    },
+    "High (>=30%)": {
+      "count": 675,
+      "observed_rate": 0.41333333333333333
+    }
+  },
+  "calibration_diagram": [
+    {
+      "bin_index": 0,
+      "bin_range": "0.0-0.1",
+      "count": 974,
+      "mean_predicted": 0.0828,
+      "fraction_positive": 0.0708,
+      "absolute_gap": 0.012
+    },
+    {
+      "bin_index": 1,
+      "bin_range": "0.1-0.2",
+      "count": 2251,
+      "mean_predicted": 0.1425,
+      "fraction_positive": 0.1364,
+      "absolute_gap": 0.0061
+    },
+    {
+      "bin_index": 2,
+      "bin_range": "0.2-0.3",
+      "count": 905,
+      "mean_predicted": 0.2438,
+      "fraction_positive": 0.232,
+      "absolute_gap": 0.0118
+    },
+    {
+      "bin_index": 3,
+      "bin_range": "0.3-0.4",
+      "count": 403,
+      "mean_predicted": 0.3404,
+      "fraction_positive": 0.3623,
+      "absolute_gap": 0.0219
+    },
+    {
+      "bin_index": 4,
+      "bin_range": "0.4-0.5",
+      "count": 167,
+      "mean_predicted": 0.442,
+      "fraction_positive": 0.4311,
+      "absolute_gap": 0.0109
+    },
+    {
+      "bin_index": 5,
+      "bin_range": "0.5-0.6",
+      "count": 72,
+      "mean_predicted": 0.5452,
+      "fraction_positive": 0.5139,
+      "absolute_gap": 0.0313
+    },
+    {
+      "bin_index": 6,
+      "bin_range": "0.6-0.7",
+      "count": 27,
+      "mean_predicted": 0.6456,
+      "fraction_positive": 0.7407,
+      "absolute_gap": 0.0951
+    },
+    {
+      "bin_index": 7,
+      "bin_range": "0.7-0.8",
+      "count": 6,
+      "mean_predicted": 0.7199,
+      "fraction_positive": 0.6667,
+      "absolute_gap": 0.0532
+    },
+    {
+      "bin_index": 8,
+      "bin_range": "0.8-0.9",
+      "count": 0,
+      "mean_predicted": 0.85,
+      "fraction_positive": 0.0,
+      "absolute_gap": 0.0
+    },
+    {
+      "bin_index": 9,
+      "bin_range": "0.9-1.0",
+      "count": 0,
+      "mean_predicted": 0.95,
+      "fraction_positive": 0.0,
+      "absolute_gap": 0.0
+    }
+  ],
+  "precision_recall_curve": [
+    {
+      "recall": 1.0,
+      "precision": 0.18,
+      "threshold": 0.0346
+    },
+    {
+      "recall": 0.9908,
+      "precision": 0.1858,
+      "threshold": 0.0729
+    },
+    {
+      "recall": 0.9723,
+      "precision": 0.1902,
+      "threshold": 0.0822
+    },
+    {
+      "recall": 0.9584,
+      "precision": 0.196,
+      "threshold": 0.0884
+    },
+    {
+      "recall": 0.9399,
+      "precision": 0.2014,
+      "threshold": 0.0945
+    },
+    {
+      "recall": 0.9214,
+      "precision": 0.2074,
+      "threshold": 0.0997
+    },
+    {
+      "recall": 0.8983,
+      "precision": 0.2128,
+      "threshold": 0.1052
+    },
+    {
+      "recall": 0.874,
+      "precision": 0.2186,
+      "threshold": 0.1112
+    },
+    {
+      "recall": 0.8497,
+      "precision": 0.225,
+      "threshold": 0.1173
+    },
+    {
+      "recall": 0.8254,
+      "precision": 0.2323,
+      "threshold": 0.1239
+    },
+    {
+      "recall": 0.7919,
+      "precision": 0.2377,
+      "threshold": 0.1322
+    },
+    {
+      "recall": 0.7549,
+      "precision": 0.2428,
+      "threshold": 0.1404
+    },
+    {
+      "recall": 0.7237,
+      "precision": 0.2506,
+      "threshold": 0.149
+    },
+    {
+      "recall": 0.6913,
+      "precision": 0.2593,
+      "threshold": 0.1572
+    },
+    {
+      "recall": 0.6555,
+      "precision": 0.2682,
+      "threshold": 0.1668
+    },
+    {
+      "recall": 0.6231,
+      "precision": 0.2804,
+      "threshold": 0.1766
+    },
+    {
+      "recall": 0.5942,
+      "precision": 0.2971,
+      "threshold": 0.1897
+    },
+    {
+      "recall": 0.5572,
+      "precision": 0.3134,
+      "threshold": 0.2026
+    },
+    {
+      "recall": 0.5191,
+      "precision": 0.3336,
+      "threshold": 0.2196
+    },
+    {
+      "recall": 0.4798,
+      "precision": 0.3596,
+      "threshold": 0.2383
+    },
+    {
+      "recall": 0.4104,
+      "precision": 0.369,
+      "threshold": 0.2599
+    },
+    {
+      "recall": 0.341,
+      "precision": 0.3831,
+      "threshold": 0.2862
+    },
+    {
+      "recall": 0.2913,
+      "precision": 0.436,
+      "threshold": 0.3147
+    },
+    {
+      "recall": 0.2092,
+      "precision": 0.4689,
+      "threshold": 0.3596
+    },
+    {
+      "recall": 0.1168,
+      "precision": 0.5206,
+      "threshold": 0.4402
+    },
+    {
+      "recall": 0.0023,
+      "precision": 1.0,
+      "threshold": 0.7235
+    }
+  ],
+  "roc_curve": [
+    {
+      "fpr": 0.0,
+      "tpr": 0.0,
+      "threshold": 1.0
+    },
+    {
+      "fpr": 0.0129,
+      "tpr": 0.0775,
+      "threshold": 0.4826
+    },
+    {
+      "fpr": 0.0272,
+      "tpr": 0.1329,
+      "threshold": 0.4221
+    },
+    {
+      "fpr": 0.0424,
+      "tpr": 0.1827,
+      "threshold": 0.3783
+    },
+    {
+      "fpr": 0.0617,
+      "tpr": 0.2312,
+      "threshold": 0.3432
+    },
+    {
+      "fpr": 0.0782,
+      "tpr": 0.2786,
+      "threshold": 0.3195
+    },
+    {
+      "fpr": 0.098,
+      "tpr": 0.3202,
+      "threshold": 0.302
+    },
+    {
+      "fpr": 0.1269,
+      "tpr": 0.3572,
+      "threshold": 0.2802
+    },
+    {
+      "fpr": 0.1475,
+      "tpr": 0.4012,
+      "threshold": 0.264
+    },
+    {
+      "fpr": 0.1642,
+      "tpr": 0.4405,
+      "threshold": 0.2524
+    },
+    {
+      "fpr": 0.1901,
+      "tpr": 0.4809,
+      "threshold": 0.2367
+    },
+    {
+      "fpr": 0.2269,
+      "tpr": 0.5179,
+      "threshold": 0.2198
+    },
+    {
+      "fpr": 0.2612,
+      "tpr": 0.5514,
+      "threshold": 0.2052
+    },
+    {
+      "fpr": 0.3036,
+      "tpr": 0.5873,
+      "threshold": 0.1911
+    },
+    {
+      "fpr": 0.3543,
+      "tpr": 0.6277,
+      "threshold": 0.1757
+    },
+    {
+      "fpr": 0.3967,
+      "tpr": 0.6578,
+      "threshold": 0.1661
+    },
+    {
+      "fpr": 0.4416,
+      "tpr": 0.6948,
+      "threshold": 0.1556
+    },
+    {
+      "fpr": 0.4799,
+      "tpr": 0.7283,
+      "threshold": 0.148
+    },
+    {
+      "fpr": 0.5228,
+      "tpr": 0.7618,
+      "threshold": 0.139
+    },
+    {
+      "fpr": 0.564,
+      "tpr": 0.7988,
+      "threshold": 0.1309
+    },
+    {
+      "fpr": 0.614,
+      "tpr": 0.8335,
+      "threshold": 0.1218
+    },
+    {
+      "fpr": 0.6777,
+      "tpr": 0.8659,
+      "threshold": 0.1125
+    },
+    {
+      "fpr": 0.7335,
+      "tpr": 0.9006,
+      "threshold": 0.1048
+    },
+    {
+      "fpr": 0.7937,
+      "tpr": 0.9329,
+      "threshold": 0.0971
+    },
+    {
+      "fpr": 0.8647,
+      "tpr": 0.9607,
+      "threshold": 0.088
+    },
+    {
+      "fpr": 0.9629,
+      "tpr": 0.9942,
+      "threshold": 0.0696
+    }
+  ]
+}

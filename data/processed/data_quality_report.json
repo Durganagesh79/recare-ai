@@ -1,0 +1,49 @@
+{
+  "total_records_generated": 25125,
+  "unique_encounters": 25000,
+  "duplicate_encounter_count": 125,
+  "unique_patients": 11730,
+  "patients_with_multiple_encounters": 6135,
+  "readmission_rate_overall": 0.2125,
+  "planned_readmission_count": 877,
+  "missing_values_by_column": {
+    "hemoglobin": 5434,
+    "serum_creatinine": 4978,
+    "sodium": 5161,
+    "bun": 5593,
+    "glucose": 5397,
+    "follow_up_scheduled": 1014
+  },
+  "missing_percentage_by_column": {
+    "hemoglobin": 21.63,
+    "serum_creatinine": 19.81,
+    "sodium": 20.54,
+    "bun": 22.26,
+    "glucose": 21.48,
+    "follow_up_scheduled": 4.04
+  },
+  "diagnosis_condition_distribution": {
+    "Heart Failure": 5105,
+    "COPD / Chronic Lower Respiratory": 3979,
+    "Pneumonia": 3565,
+    "Diabetes with Complications": 3260,
+    "Acute Myocardial Infarction": 2996,
+    "Sepsis": 2460,
+    "Cerebrovascular Disease / Stroke": 2070,
+    "Orthopedic / Joint Replacement": 1690
+  },
+  "payer_distribution": {
+    "Medicare": 11941,
+    "Commercial": 8245,
+    "Medicaid": 3674,
+    "Uninsured/Self-pay": 1265
+  },
+  "discharge_disposition_distribution": {
+    "Home": 14491,
+    "Home Health Care": 4736,
+    "Skilled Nursing Facility (SNF)": 3559,
+    "Inpatient Rehabilitation": 1328,
+    "Against Medical Advice (AMA)": 627,
+    "Hospice": 384
+  }
+}
