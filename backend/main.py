@@ -66,9 +66,14 @@ app.include_router(model_info.router)
 
 @app.on_event("startup")
 def on_startup():
-    """Ensure database schema is verified on startup."""
+    """Ensure database schema and initial seed data are initialized on startup."""
     logger.info("Verifying database schema...")
     Base.metadata.create_all(bind=engine)
+    try:
+        from backend.db.init_db import initialize_and_seed_database
+        initialize_and_seed_database()
+    except Exception as e:
+        logger.warning(f"Database seed notice: {e}")
     logger.info("ReCare AI backend services initialized.")
 
 
